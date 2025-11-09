@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Task, TaskStatus } from '../types';
 
@@ -9,8 +8,8 @@ interface ChecklistItemProps {
     onMoveTask: (id: number, direction: 'up' | 'down') => void;
 }
 
-const inputStyles = "bg-slate-700/50 border border-slate-600 rounded-md py-1 px-2 w-full focus:ring-2 focus:ring-sky-500 focus:border-sky-500 focus:outline-none transition";
-const buttonStyles = "px-2 py-1 rounded-md text-slate-300 hover:bg-slate-600 transition";
+const inputStyles = "bg-white border border-slate-300 rounded-md py-1 px-2 w-full text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition";
+const buttonStyles = "px-2 py-1 rounded-md text-slate-500 hover:bg-slate-200 transition";
 
 const ChecklistItem: React.FC<ChecklistItemProps> = ({ task, onUpdateTask, onDeleteTask, onMoveTask }) => {
 
@@ -19,7 +18,7 @@ const ChecklistItem: React.FC<ChecklistItemProps> = ({ task, onUpdateTask, onDel
     };
 
     return (
-        <tr className="border-b border-slate-700">
+        <tr className="border-b border-slate-200 last:border-b-0">
             <td className="p-2 w-1/6">
                 <input
                     type="text"
@@ -73,7 +72,7 @@ const ChecklistItem: React.FC<ChecklistItemProps> = ({ task, onUpdateTask, onDel
                 <div className="flex items-center justify-center gap-1">
                     <button onClick={() => onMoveTask(task.id, 'up')} className={buttonStyles} aria-label="Move task up">↑</button>
                     <button onClick={() => onMoveTask(task.id, 'down')} className={buttonStyles} aria-label="Move task down">↓</button>
-                    <button onClick={() => onDeleteTask(task.id)} className={`${buttonStyles} hover:bg-red-500/50 hover:text-red-300`} aria-label="Delete task">✕</button>
+                    <button onClick={() => onDeleteTask(task.id)} className={`${buttonStyles} hover:bg-red-100 hover:text-red-600`} aria-label="Delete task">✕</button>
                 </div>
             </td>
         </tr>
