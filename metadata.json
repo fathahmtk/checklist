@@ -1,0 +1,5 @@
+{
+  "name": "Interactive Task Checklist",
+  "description": "A dynamic and visually appealing checklist application to track the status of various tasks, grouped by category. It features a progress bar for an at-a-glance view of completion.",
+  "requestFramePermissions": []
+}
